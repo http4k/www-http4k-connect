@@ -185,4 +185,29 @@
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://connect.http4k.org/documentation/storage/core/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/documentation/storage/http/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/documentation/storage/jdbc/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/documentation/storage/redis/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/documentation/storage/s3/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
