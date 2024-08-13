@@ -1,0 +1,708 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    
+    <script language="JavaScript">
+  ak = "Y2JjZDg5MzE5YTUwYjYzMTYyNzFmNGMzZDc5OWM2NTc="
+</script>
+    <meta charset="utf-8">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<meta itemprop="name" content="http4k - a functional Kotlin HTTP toolkit">
+<meta property="og:title" content="http4k - a functional Kotlin HTTP toolkit" />
+<meta property="og:image" content="https://www.http4k.org/img/logo-intro.png">
+<meta name="twitter:title" content="http4k - a functional Kotlin HTTP toolkit">
+<meta property="twitter:image" content="https://www.http4k.org/img/logo-intro.png">
+
+
+
+<meta name="description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends" />
+<meta name="twitter:description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends">
+
+
+
+<link rel="canonical" href="https://connect.http4k.org/reference/kafka/rest/">
+
+
+
+<meta name="author" content="David Denton (@daviddenton), Ivan Sanchez (@s4nchez)">
+<meta name="twitter:creator" content="David Denton (@daviddenton), Ivan Sanchez (@s4nchez)">
+
+
+
+
+<meta name="lang:clipboard.copy" content="en">
+
+<meta name="lang:clipboard.copied" content="en">
+
+<meta name="lang:search.language" content="en">
+
+<meta name="lang:search.pipeline.stopwords" content="en">
+
+<meta name="lang:search.pipeline.trimmer" content="en">
+
+<meta name="lang:search.result.none" content="en">
+
+<meta name="lang:search.result.one" content="en">
+
+<meta name="lang:search.result.other" content="en">
+
+<meta name="lang:search.tokenizer" content="en">
+
+<!-- ****** faviconit.com favicons ****** -->
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/img/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/img/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+<link rel="apple-touch-icon" href="/img/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/img/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/img/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/img/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/img/favicon-144.png">
+<meta name="msapplication-config" content="/img/browserconfig.xml">
+<!-- ****** faviconit.com favicons ****** -->
+<meta name="generator" content="mkdocs-1.6.0, mkdocs-material-3.0.4">
+    
+    
+    
+    <title>REST Gateway - http4k Connect</title>
+    
+    
+    
+    
+    
+    
+    <meta name="theme-color" content="#4051b5">
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/codehilite.css"/>
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+    
+    
+    <link rel="stylesheet" href="/css/main.css"/>
+    
+    <link rel="stylesheet" href="../../../css/site.css">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+
+
+
+<body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+
+
+
+
+
+
+
+<div class="intro">
+    <div class="row no-gutters justify-content-center">
+        <div class="aside col-auto">
+    <img class="mb-3 sideToggle d-inline-block d-md-none" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
+    <a href="/">
+        <div class="logo"><img src="/img/logo-intro.png" width="185" alt="logo" srcset=""/></div>
+    </a>
+    <ul class="nav flex-column">
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../documentation/"
+               title="Introduction">Introduction</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../changelog/"
+               title="Changelog">Changelog</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../contributing/"
+               title="Contribute/support http4k">Contribute/support http4k</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../code-of-conduct/"
+               title="Code of Conduct">Code of Conduct</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">AI</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/langchain/"
+           title="LangChain">LangChain</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/lmstudio/"
+           title="LMStudio">LMStudio</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/ollama/"
+           title="Ollama">Ollama</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/openai/"
+           title="OpenAI">OpenAI</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">AWS</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/apprunner/"
+           title="App Runner">App Runner</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/cloudfront/"
+           title="Cloudfront">Cloudfront</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/cloudwatchlogs/"
+           title="Cloudwatch Logs">Cloudwatch Logs</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/cognito/"
+           title="Cognito">Cognito</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/containercredentials/"
+           title="Container Credentials">Container Credentials</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/dynamodb/"
+           title="DynamoDB">DynamoDB</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/eventbridge/"
+           title="EventBridge">EventBridge</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/evidently/"
+           title="Evidently">Evidently</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/firehose/"
+           title="Firehose">Firehose</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/iamidentitycenter/"
+           title="IAM Identity Center">IAM Identity Center</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/instancemetadata/"
+           title="Instance Metadata">Instance Metadata</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/kms/"
+           title="KMS">KMS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/lambda/"
+           title="Lambda">Lambda</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/s3/"
+           title="S3">S3</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/secretsmanager/"
+           title="Secrets Manager">Secrets Manager</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/ses/"
+           title="SES">SES</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/sns/"
+           title="SNS">SNS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/sqs/"
+           title="SQS">SQS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/sts/"
+           title="STS">STS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../amazon/systemsmanager/"
+           title="Systems Manager">Systems Manager</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../github/"
+               title="GitHub">GitHub</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../gitlab/"
+               title="GitLab">GitLab</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">Google</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../google/analytics-ua/"
+           title="Analytics UA">Analytics UA</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../google/analytics-ga4/"
+           title="Analytics V4">Analytics V4</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown active show">
+            <a class="nav-link dropdown-toggle active"
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="true">Kafka</a>
+            <div class="dropdown-menu show">
+            
+            
+            
+    
+        <a class="dropdown-item active"
+           href="./"
+           title="REST Gateway">REST Gateway</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../schemaregistry/"
+           title="Schema Registry">Schema Registry</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../mattermost/"
+               title="Mattermost">Mattermost</a>
+        </li>
+    
+
+        
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/http4k/http4k-connect">
+                <img src="/img/GitHub-Mark-black.png" width="28" alt="See source on GitHub">&nbsp;&nbsp;Source Code</a>
+        </li>
+    </ul>
+</div>
+        <main class="col">
+          <div class="container">
+                <div class="searchBox">
+                  <img class="searchBoxIcon" src="/img/search-icon.svg" width="20" alt="" srcset=""/>
+                  <input id="search" type="text" placeholder="Ctrl/⌘ K"/>
+                </div>
+                <div class="content">
+                    <img class="mb-3 sideToggle" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
+                    
+                    
+                    <h1 id="kafka_rest_proxy">Kafka Rest Proxy<a class="headerlink" href="#kafka_rest_proxy" title="Permanent link">&para;</a></h1>
+<p>There are 2 distinct APIs in the Rest proxy:</p>
+<h2 id="v2">v2<a class="headerlink" href="#v2" title="Permanent link">&para;</a></h2>
+<p>The main <code>KafkaRest</code> connector provides the following v2 Actions:</p>
+<ul>
+<li>CreateConsumer</li>
+<li>DeleteConsumer</li>
+<li>GetOffsets</li>
+<li>GetPartitions</li>
+<li>SeekOffsets</li>
+<li>CommitOffsets</li>
+<li>ConsumeRecords</li>
+<li>ProduceMessages</li>
+<li>SubscribeToTopics</li>
+</ul>
+<p>In addition, you can use a <code>KafkaRestConsumer</code> which provides the following Actions:</p>
+<ul>
+<li>ConsumeRecords</li>
+<li>Delete</li>
+<li>GetOffsets</li>
+<li>SeekOffsets</li>
+<li>CommitOffsets</li>
+<li>SubscribeToTopics</li>
+</ul>
+<h2 id="record_formats">Record formats<a class="headerlink" href="#record_formats" title="Permanent link">&para;</a></h2>
+<p>The following formats of Kafka records are supported currently. Partition keys are optional and null by default:</p>
+<h3 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<p>All keys and messages will be auto-marshalled to JSON using the standard Moshi instance (which supports most common JDK
+types):</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Records</span><span class="p">.</span><span class="na">Json</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">Record</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PartitionId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="m">123</span><span class="p">))))</span>
+</code></pre></div>
+
+<h3 id="avro">AVRO<a class="headerlink" href="#avro" title="Permanent link">&para;</a></h3>
+<p>Support for <code>GenericContainer</code> classes (auto-generated from schema). The Key and Value schemas will be extracted from
+the Key and Value and sent with the message automatically.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Records</span><span class="p">.</span><span class="na">Avro</span><span class="p">(</span>
+<span class="w">    </span><span class="n">listOf</span><span class="p">(</span>
+<span class="w">        </span><span class="n">Record</span><span class="p">(</span>
+<span class="w">            </span><span class="n">RandomEvent</span><span class="p">(</span><span class="n">UUID</span><span class="p">.</span><span class="na">nameUUIDFromBytes</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">())),</span>
+<span class="w">            </span><span class="n">RandomEvent</span><span class="p">(</span><span class="n">UUID</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span><span class="w"> </span><span class="n">PartitionId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="m">123</span><span class="p">))</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<h3 id="binary">Binary<a class="headerlink" href="#binary" title="Permanent link">&para;</a></h3>
+<p>Record contents are specified using Base64 type for wire transport:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Records</span><span class="p">.</span><span class="na">Binary</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">Record</span><span class="p">(</span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;456&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">PartitionId</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="m">123</span><span class="p">))))</span>
+</code></pre></div>
+
+<h2 id="notes_on_message_production">Notes on message production<a class="headerlink" href="#notes_on_message_production" title="Permanent link">&para;</a></h2>
+<p>Messages can be sent to the broker with or without PartitionIds. If you want to use a strategy for partitioning, the
+<code>Partitioner</code> interface can be implemented and used as below. <code>RoundRobin</code> and <code>Sticky</code> (key-hash % Partitions)
+strategies
+come out of the box.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">kafkaRest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KafkaRest</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Credentials</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;http://restproxy&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">JavaHttpClient</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">kafkaRest</span><span class="p">.</span><span class="na">produceMessages</span><span class="p">(</span><span class="n">Topic</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;topic&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Records</span><span class="p">.</span><span class="na">Json</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">Record</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">))),</span><span class="w"> </span><span class="o">::</span><span class="n">RoundRobinRecordPartitioner</span><span class="p">)</span>
+</code></pre></div>
+
+<p>To keep things simple with respect to partition allocation and rebalancing, the above code will fetch the available
+partitions on each send to the REST proxy using the <code>/topics/$topic/partitions</code> call. This is obviously not very
+efficient,
+but can be reimplemented as needed using any caching strategy which you might wish to implement.</p>
+<h1 id="v3_confluent_api">v3 (Confluent API)<a class="headerlink" href="#v3_confluent_api" title="Permanent link">&para;</a></h1>
+<p>The main <code>KafkaRest</code> connector provides the following v2 Actions:</p>
+<ul>
+<li>GetPartitions</li>
+<li>GetTopic</li>
+<li>GetTopics</li>
+<li>ProduceRecords</li>
+</ul>
+<h2 id="record_formats_1">Record formats<a class="headerlink" href="#record_formats_1" title="Permanent link">&para;</a></h2>
+<p>The following formats of Kafka records are supported currently. Partition keys are optional and null by default:</p>
+<h3 id="json_1">JSON<a class="headerlink" href="#json_1" title="Permanent link">&para;</a></h3>
+<p>All keys and messages will be auto-marshalled to JSON using the standard Moshi instance (which supports most common JDK
+types):</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Record</span><span class="p">(</span><span class="n">Json</span><span class="p">(</span><span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">)))</span>
+</code></pre></div>
+
+<h3 id="binary_1">Binary<a class="headerlink" href="#binary_1" title="Permanent link">&para;</a></h3>
+<p>Record contents are specified using Base64 type for wire transport:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Record</span><span class="p">(</span><span class="n">Binary</span><span class="p">(</span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;foo1&quot;</span><span class="p">)))</span>
+</code></pre></div>
+
+<h2 id="notes_on_message_production_1">Notes on message production<a class="headerlink" href="#notes_on_message_production_1" title="Permanent link">&para;</a></h2>
+<p>Messages can be sent to the broker with or without PartitionIds. If you want to use a strategy for partitioning, the
+<code>Partitioner</code> interface can be implemented and used as below. <code>RoundRobin</code> and <code>Sticky</code> (key-hash % Partitions)
+strategies
+come out of the box.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">kafkaRest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KafkaRest</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Credentials</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;http://restproxy&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">JavaHttpClient</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">kafkaRest</span><span class="p">.</span><span class="na">produceRecordsWithPartitions</span><span class="p">(</span>
+<span class="w">    </span><span class="n">topic</span><span class="p">,</span>
+<span class="w">    </span><span class="n">clusterId</span><span class="p">,</span>
+<span class="w">    </span><span class="n">listOf</span><span class="p">(</span><span class="n">Record</span><span class="p">(</span><span class="n">Binary</span><span class="p">(</span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;foo1&quot;</span><span class="p">))),),</span>
+<span class="w">    </span><span class="o">::</span><span class="n">RoundRobinRecordPartitioner</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>To keep things simple with respect to partition allocation and rebalancing, the above code will fetch the available
+partitions on each send to the REST proxy using the <code>/kafka/v3/clusters/$id/topics/$topic/partitions</code> call. This is
+obviously not very efficient,
+but can be reimplemented as needed using any caching strategy which you might wish to implement.</p>
+<h2 id="fake">Fake<a class="headerlink" href="#fake" title="Permanent link">&para;</a></h2>
+<p>The Fake provides the all of the above endpoints listed for v2 and v3, which is enough for basic consumer lifecycle and
+production and consumption
+of records. Note that consumers by default will start at the start of the topic stream, although they can be committed
+to.</p>
+<p>"auto.commit.enable" is enabled by default but can be set to "false" for manual committing of offsets.</p>
+<h3 id="default_fake_port_30091">Default Fake port: 30091<a class="headerlink" href="#default_fake_port_30091" title="Permanent link">&para;</a></h3>
+<p>To start:</p>
+<div class="codehilite"><pre><span></span><code>FakeKafkaRest().start()
+</code></pre></div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/index-min.js"></script>
+<script src="/js/toggle-search.js"></script>
+
+      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+
+
+
+
+
+
+
+
+
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-125143867-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+  apiKey: atob(ak),
+  indexName: 'http4k',
+  inputSelector: '#search',
+  debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>

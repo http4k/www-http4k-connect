@@ -1,0 +1,826 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    
+    <script language="JavaScript">
+  ak = "Y2JjZDg5MzE5YTUwYjYzMTYyNzFmNGMzZDc5OWM2NTc="
+</script>
+    <meta charset="utf-8">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<meta itemprop="name" content="http4k - a functional Kotlin HTTP toolkit">
+<meta property="og:title" content="http4k - a functional Kotlin HTTP toolkit" />
+<meta property="og:image" content="https://www.http4k.org/img/logo-intro.png">
+<meta name="twitter:title" content="http4k - a functional Kotlin HTTP toolkit">
+<meta property="twitter:image" content="https://www.http4k.org/img/logo-intro.png">
+
+
+
+<meta name="description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends" />
+<meta name="twitter:description" content="http4k-connect is a set of lightweight API libraries for connecting to popular third-party cloud services and AI backends">
+
+
+
+<link rel="canonical" href="https://connect.http4k.org/reference/amazon/dynamodb/">
+
+
+
+<meta name="author" content="David Denton (@daviddenton), Ivan Sanchez (@s4nchez)">
+<meta name="twitter:creator" content="David Denton (@daviddenton), Ivan Sanchez (@s4nchez)">
+
+
+
+
+<meta name="lang:clipboard.copy" content="en">
+
+<meta name="lang:clipboard.copied" content="en">
+
+<meta name="lang:search.language" content="en">
+
+<meta name="lang:search.pipeline.stopwords" content="en">
+
+<meta name="lang:search.pipeline.trimmer" content="en">
+
+<meta name="lang:search.result.none" content="en">
+
+<meta name="lang:search.result.one" content="en">
+
+<meta name="lang:search.result.other" content="en">
+
+<meta name="lang:search.tokenizer" content="en">
+
+<!-- ****** faviconit.com favicons ****** -->
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/img/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/img/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+<link rel="apple-touch-icon" href="/img/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/img/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/img/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/img/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/img/favicon-144.png">
+<meta name="msapplication-config" content="/img/browserconfig.xml">
+<!-- ****** faviconit.com favicons ****** -->
+<meta name="generator" content="mkdocs-1.6.0, mkdocs-material-3.0.4">
+    
+    
+    
+    <title>DynamoDB - http4k Connect</title>
+    
+    
+    
+    
+    
+    
+    <meta name="theme-color" content="#4051b5">
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/codehilite.css"/>
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+    
+    
+    <link rel="stylesheet" href="/css/main.css"/>
+    
+    <link rel="stylesheet" href="../../../css/site.css">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+
+
+
+<body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+
+
+
+
+
+
+
+<div class="intro">
+    <div class="row no-gutters justify-content-center">
+        <div class="aside col-auto">
+    <img class="mb-3 sideToggle d-inline-block d-md-none" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
+    <a href="/">
+        <div class="logo"><img src="/img/logo-intro.png" width="185" alt="logo" srcset=""/></div>
+    </a>
+    <ul class="nav flex-column">
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../documentation/"
+               title="Introduction">Introduction</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../changelog/"
+               title="Changelog">Changelog</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../contributing/"
+               title="Contribute/support http4k">Contribute/support http4k</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../../code-of-conduct/"
+               title="Code of Conduct">Code of Conduct</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">AI</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/langchain/"
+           title="LangChain">LangChain</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/lmstudio/"
+           title="LMStudio">LMStudio</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/ollama/"
+           title="Ollama">Ollama</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../ai/openai/"
+           title="OpenAI">OpenAI</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown active show">
+            <a class="nav-link dropdown-toggle active"
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="true">AWS</a>
+            <div class="dropdown-menu show">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../apprunner/"
+           title="App Runner">App Runner</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../cloudfront/"
+           title="Cloudfront">Cloudfront</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../cloudwatchlogs/"
+           title="Cloudwatch Logs">Cloudwatch Logs</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../cognito/"
+           title="Cognito">Cognito</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../containercredentials/"
+           title="Container Credentials">Container Credentials</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item active"
+           href="./"
+           title="DynamoDB">DynamoDB</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../eventbridge/"
+           title="EventBridge">EventBridge</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../evidently/"
+           title="Evidently">Evidently</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../firehose/"
+           title="Firehose">Firehose</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../iamidentitycenter/"
+           title="IAM Identity Center">IAM Identity Center</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../instancemetadata/"
+           title="Instance Metadata">Instance Metadata</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../kms/"
+           title="KMS">KMS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../lambda/"
+           title="Lambda">Lambda</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../s3/"
+           title="S3">S3</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../secretsmanager/"
+           title="Secrets Manager">Secrets Manager</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../ses/"
+           title="SES">SES</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../sns/"
+           title="SNS">SNS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../sqs/"
+           title="SQS">SQS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../sts/"
+           title="STS">STS</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../systemsmanager/"
+           title="Systems Manager">Systems Manager</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../github/"
+               title="GitHub">GitHub</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../gitlab/"
+               title="GitLab">GitLab</a>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">Google</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../google/analytics-ua/"
+           title="Analytics UA">Analytics UA</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../google/analytics-ga4/"
+           title="Analytics V4">Analytics V4</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
+               data-toggle="dropdown"
+               href="#"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">Kafka</a>
+            <div class="dropdown-menu ">
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../kafka/rest/"
+           title="REST Gateway">REST Gateway</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
+           href="../../kafka/schemaregistry/"
+           title="Schema Registry">Schema Registry</a>
+    
+
+            
+            </div>
+        </li>
+    
+
+        
+        
+        
+        
+    
+        <li class="nav-item">
+            <a class="nav-link "
+               href="../../mattermost/"
+               title="Mattermost">Mattermost</a>
+        </li>
+    
+
+        
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/http4k/http4k-connect">
+                <img src="/img/GitHub-Mark-black.png" width="28" alt="See source on GitHub">&nbsp;&nbsp;Source Code</a>
+        </li>
+    </ul>
+</div>
+        <main class="col">
+          <div class="container">
+                <div class="searchBox">
+                  <img class="searchBoxIcon" src="/img/search-icon.svg" width="20" alt="" srcset=""/>
+                  <input id="search" type="text" placeholder="Ctrl/⌘ K"/>
+                </div>
+                <div class="content">
+                    <img class="mb-3 sideToggle" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
+                    
+                    
+                    <h1 id="dynamodb">DynamoDb<a class="headerlink" href="#dynamodb" title="Permanent link">&para;</a></h1>
+<p>The DynamoDb connector provides the following Actions:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">*</span> CreateTable
+<span class="k">*</span> DeleteTable
+<span class="k">*</span> DescribeTable
+<span class="k">*</span> ListTables
+<span class="k">*</span> UpdateTable
+<span class="k">*</span> DeleteItem
+<span class="k">*</span> GetItem
+<span class="k">*</span> PutItem
+<span class="k">*</span> Query
+<span class="k">*</span> Scan
+<span class="k">*</span> UpdateItem
+<span class="k">*</span> TransactGetItems
+<span class="k">*</span> TransactWriteItems
+<span class="k">*</span> BatchGetItem
+<span class="k">*</span> BatchWriteItem
+<span class="k">*</span> ExecuteTransaction
+<span class="k">*</span> ExecuteStatement
+<span class="k">*</span> BatchExecuteStatement
+</code></pre></div>
+
+<p>Note that the FakeDynamo supports the majority of the Dynamo operations with the following exceptions. You can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html">DynamoDB</a> local instead to provide these functions:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">*</span> BatchExecuteStatement
+<span class="k">*</span> ExecuteStatement
+<span class="k">*</span> ExecuteTransaction
+</code></pre></div>
+
+<p>The client APIs utilise the <code>http4k-aws</code> module for request signing, which means no dependencies on the incredibly fat Amazon-SDK JARs. This means this integration is perfect for running Serverless Lambdas where binary size is a performance factor.</p>
+<h3 id="typesafe_items_keys">Typesafe Items &amp; Keys<a class="headerlink" href="#typesafe_items_keys" title="Permanent link">&para;</a></h3>
+<p>Most of the http4k-connect DynamoDb API is fairly simple, but one addition which may warrant further explanation is the http4k Lens system which is layered on top provide a typesafe API to the Item/Key objects (used for getting/setting record attributes and for defining key structures). This is useful because of the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html">unique way</a> in which Dynamo handles the structure of the stored items.</p>
+<ul>
+<li><code>AttributeName</code> - is just a data class for a named attribute in an item/key</li>
+<li><code>AttributeValue</code> is the on-the-wire format of an attribute with it's requisite type. Examples of this are: <code>{ "S": "hello" }</code> or <code>{ "BOOL": true }</code> or <code>{ "NS": ["123"] }</code>. Construction of these AttributeValues can be done using factory functions such as <code>AttributeValue.Str("string")</code>. <code>AttributeValues</code> can be primitives (BOOL, S, N), Sets (NS, BS), or collections of other AttributeValues (L, M).</li>
+<li><code>Item</code> and <code>Key</code> are just typealiases for <code>Map&lt;AttributeName, AttributeValue&gt;</code>. They have convenience construction methods <code>Item()</code> and <code>Key()</code>. These are sent to and returned in the messages between a client and DynamoDb.</li>
+</ul>
+<p>When constructing <code>Actions</code> or deconstructing their responses for Items/Keys, we can populate or interrogate the Map returned manually, but we may be unsure of the types. To that end, the http4k Lens system has been used to create a typesafe binding between the names and types of the AttributeValues. This system supports all of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html">types</a> available in the Dynamo type system, and also provides mapping for both common JDK types (including popular Java Datetime types) and required/optional attributes (ie. <code>String</code> vs <code>String?</code>).</p>
+<h3 id="typesafe_lens-based_dynamo_object_mapper">Typesafe lens-based Dynamo Object Mapper<a class="headerlink" href="#typesafe_lens-based_dynamo_object_mapper" title="Permanent link">&para;</a></h3>
+<p>Using the lens system and http4k automapping facilities, http4k-connect also supports dynamic flattening of objects into the DynamoDB schema with zero boilerplate. Simply create a lens and apply it to your object to inject values into the DynamoDB Item. the structure of maps and lists are preserved by collapsing them into a single DynamoDB field. This is implemented as a standard extension function on any of the http4k automarshalling object mappers (Jackson, Moshi, GSON etc..):</p>
+<div class="codehilite"><pre><span></span><code>data<span class="w"> </span>class<span class="w"> </span>AnObject(val<span class="w"> </span>str:<span class="w"> </span>String,<span class="w"> </span>val<span class="w"> </span>num:<span class="w"> </span>Int)
+
+val<span class="w"> </span>input<span class="w"> </span>=<span class="w"> </span>AnObject(&quot;foobar&quot;,<span class="w"> </span>123)
+
+val<span class="w"> </span>lens<span class="w"> </span>=<span class="w"> </span>Moshi.autoDynamoLens<span class="nt">&lt;AnObject&gt;</span>()
+
+val<span class="w"> </span>item:<span class="w"> </span>Item<span class="w"> </span>=<span class="w"> </span>Item().with(lens<span class="w"> </span>of<span class="w"> </span>input)
+
+val<span class="w"> </span>extracted:<span class="w"> </span>AnObject<span class="w"> </span>=<span class="w"> </span>lens(item)
+</code></pre></div>
+
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>Given that a record in Dynamo will have many typed values, we first define a set of attributes which are relevant for the case in question. These methods construct Lenses which can be used to inject or extract typed values safely:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">attrS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">string</span><span class="p">().</span><span class="na">optional</span><span class="p">(</span><span class="s">&quot;theNull&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">attrBool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">boolean</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;theBool&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">attrN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">int</span><span class="p">().</span><span class="na">optional</span><span class="p">(</span><span class="s">&quot;theNum&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">attrI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">instant</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;theInstant&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">attrM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">map</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;theMap&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>To construct an Item or Key to send to Dynamo, we can bind the values at the same time:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span>
+<span class="w">    </span><span class="n">attrS</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">attrN</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="n">attrM</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span><span class="n">attrI</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">())</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>To deconstruct an Item or Key to send to Dynamo, we simply apply the attributes as functions to the container:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">string</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrS</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">boolean</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrBool</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">instant</span><span class="p">:</span><span class="w"> </span><span class="n">Instant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrI</span><span class="p">(</span><span class="n">attrM</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+</code></pre></div>
+
+<p>On missing or invalid value, an exception is thrown. To counter this we can use the built in Result4k monad marshalling: </p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">boolean</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">LensFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrBool</span><span class="p">.</span><span class="na">asResult</span><span class="p">()(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+
+<p>It is also possible to <code>map()</code> lenses to provide marshalling into your own types.</p>
+<h4 id="null_handling_and_sparse_indexes">Null handling and sparse indexes<a class="headerlink" href="#null_handling_and_sparse_indexes" title="Permanent link">&para;</a></h4>
+<p>The default mapping for null values of manually mapped optional attributes in DynamoDB will assign them to an explicit 
+null attribute:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">attrS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">string</span><span class="p">().</span><span class="na">optional</span><span class="p">(</span><span class="s">&quot;optS&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span><span class="n">attrS</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+
+<span class="c1">// item now contains &quot;optS&quot;: { &quot;NULL&quot;: true }</span>
+</code></pre></div>
+
+<p>When utilizing an optional attribute as a key in a secondary index (creating a sparse index), the attribute must be 
+absent rather than null. To achieve this, set <code>ignoreNull</code> to true in the attribute definition.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">attrS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">string</span><span class="p">().</span><span class="na">optional</span><span class="p">(</span><span class="s">&quot;optS&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ignoreNull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
+
+<p>When incorporating this attribute into the secondary index schema, it is necessary to convert it into a mandatory 
+(non-optional) attribute.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// attrS is of type Attribute&lt;String?&gt;</span>
+
+<span class="n">attrS</span><span class="p">.</span><span class="na">asRequired</span><span class="p">()</span><span class="w"> </span><span class="c1">// will be of type Attribute&lt;String&gt;</span>
+</code></pre></div>
+
+<p>Note: null properties of automapped objects (using <code>autoDynamoLens()</code>) will be ignored by default.</p>
+<h3 id="dynamodb_table_repository">DynamoDB Table Repository<a class="headerlink" href="#dynamodb_table_repository" title="Permanent link">&para;</a></h3>
+<p>A simplified API for mapping documents to and from a single table with <code>get</code>, <code>put</code>, <code>scan</code>, <code>query</code>, etc.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">USE_REAL_CLIENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="c1">// define our data class</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">john</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">)</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">jane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Jane&quot;</span><span class="p">)</span>
+
+<span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// build client (real or fake)</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">USE_REAL_CLIENT</span><span class="p">)</span><span class="w"> </span><span class="n">JavaHttpClient</span><span class="p">()</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">FakeDynamoDb</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">dynamoDb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DynamoDb</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">CA_CENTRAL_1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">AwsCredentials</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;secret&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">http</span><span class="p">.</span><span class="na">debug</span><span class="p">())</span>
+
+<span class="w">    </span><span class="c1">// defined table mapper</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dynamoDb</span><span class="p">.</span><span class="na">tableMapper</span><span class="o">&lt;</span><span class="n">Person</span><span class="p">,</span><span class="w"> </span><span class="n">UUID</span><span class="p">,</span><span class="w"> </span><span class="kt">Unit</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="n">tableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TableName</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;people&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">hashKeyAttribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">uuid</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// create table</span>
+<span class="w">    </span><span class="n">table</span><span class="p">.</span><span class="na">createTable</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">// save</span>
+<span class="w">    </span><span class="n">table</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">john</span><span class="p">)</span>
+<span class="w">    </span><span class="n">table</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">jane</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// get</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">johnAgain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">john</span><span class="p">.</span><span class="na">id</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// scan</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">primaryIndex</span><span class="p">().</span><span class="na">scan</span><span class="p">().</span><span class="na">take</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// delete</span>
+<span class="w">    </span><span class="n">table</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">john</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>See another <a href="/amazon/dynamodb/client/src/examples/kotlin/using_the_table_mapper.kt">example</a> with secondary indices.</p>
+<p>Complex scan or query expressions may be constructed using functions from the <code>KeyConditionBuilder</code> and <code>FilterExpressionBuilder</code> classes
+(which therefore provide a scan/query DSL). This DSL is not complete, however it should cover most of the common use cases. </p>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">idAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">uuid</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">nameAttr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Attribute</span><span class="p">.</span><span class="na">string</span><span class="p">().</span><span class="na">required</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span>
+
+<span class="c1">// scan with filter</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">primaryIndex</span><span class="p">().</span><span class="na">scan</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">filterExpression</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="n">nameAttr</span><span class="w"> </span><span class="n">beginsWith</span><span class="w"> </span><span class="s">&quot;J&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="p">(</span><span class="n">nameAttr</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="s">&quot;Jimmy&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// query with key condition (doesn&#39;t actually make much sense is this example)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">anotherJohn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">primaryIndex</span><span class="p">().</span><span class="na">query</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">keyCondition</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">hashKey</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="n">john</span><span class="p">.</span><span class="na">id</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>General query pattern with combined key condition and filter expression</p>
+<div class="codehilite"><pre><span></span><code><span class="n">table</span><span class="p">.</span><span class="na">primaryIndex</span><span class="p">().</span><span class="na">query</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">keyCondition</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="n">hashKey</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="n">hashValue</span><span class="p">)</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">sortKey</span><span class="w"> </span><span class="n">gt</span><span class="w"> </span><span class="n">sortValue</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">filterExpression</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="n">fooAttr</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="p">(</span><span class="n">barAttr</span><span class="w"> </span><span class="n">isIn</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">))</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">bazAttr</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="n">quzAttr</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Notes:
+ - <code>hashKey</code> and <code>sortKey</code> are special identifiers to be used in the <code>keyCondition</code> that represent the actual key 
+   attributes of the current index
+ - the hash key condition must use the <code>eq</code> operator (no other operators allowed),<br />
+ - in the sort key condition the following operators are supported: <code>eq</code> <code>gt</code>,<code>ge</code>,<code>lt</code>, <code>le</code> (for <code>=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>), 
+   <code>beginsWith</code>, and the <code>sortKey.between(val1, val2)</code> function
+ - in the filter expression concrete attributes must be used instead of <code>hashKey</code> or <code>sortKey</code>
+ - the filter expression supports all of the above operators plus <code>ne</code> (<code>&lt;&gt;</code>), <code>isIn</code>, <code>contains</code>, <code>attributeExists(attr)</code>,
+   and <code>attributeNotExists(attr)</code>
+ - in a filter expression the first operand in a comparison must be an attribute, the second operand is either a value
+   or another attribute of the same type (so <code>xAttr eq 42</code> and <code>xAttr ne yAttr</code> are supported, but <code>42 eq xAttr</code> is not) 
+ - the logical operators <code>and</code> and <code>or</code> in this DSL are always evaluated from left to right (i.e. there is no higher precedence for <code>and</code>),
+   you should use parenthesis to change the order of evaluation 
+ - if an operand of a logical operator is <code>null</code> it will simply be omitted. This allows building queries with optional conditions:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">filterExpression</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kd">val</span><span class="w"> </span><span class="nv">nameFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">nameAttr</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+<span class="w">   </span><span class="kd">val</span><span class="w"> </span><span class="nv">sizeFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sizeAttr</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">// results in either a filter for name, a filter for size, a filter for both, or in no filter at all </span>
+<span class="w">   </span><span class="n">nameFilter</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">sizeFilter</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="general_example_usage_of_api_client">General example usage of API client<a class="headerlink" href="#general_example_usage_of_api_client" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1">// we can connect to the real service</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">http</span><span class="p">:</span><span class="w"> </span><span class="n">HttpHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JavaHttpClient</span><span class="p">()</span>
+
+<span class="c1">// create a client</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DynamoDb</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;us-east-1&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">AwsCredentials</span><span class="p">(</span><span class="s">&quot;accessKeyId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;secretKey&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">http</span><span class="p">.</span><span class="na">debug</span><span class="p">())</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TableName</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;myTable&quot;</span><span class="p">)</span>
+
+<span class="c1">// we can bind values to the attributes</span>
+<span class="n">client</span><span class="p">.</span><span class="na">putItem</span><span class="p">(</span>
+<span class="w">    </span><span class="n">table</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span>
+<span class="w">        </span><span class="n">attrS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">attrBool</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">attrB</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">attrBS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="n">Base64Blob</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)),</span>
+<span class="w">        </span><span class="n">attrN</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="m">123</span><span class="p">,</span>
+<span class="w">        </span><span class="n">attrNS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="w"> </span><span class="m">12.34</span><span class="p">),</span>
+<span class="w">        </span><span class="n">attrL</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
+<span class="w">            </span><span class="n">List</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">AttributeValue</span><span class="p">.</span><span class="na">Str</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">))),</span>
+<span class="w">            </span><span class="n">Num</span><span class="p">(</span><span class="m">123</span><span class="p">),</span>
+<span class="w">            </span><span class="n">Null</span><span class="p">()</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">        </span><span class="n">attrM</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span><span class="n">attrS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">attrBool</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="w">        </span><span class="n">attrSS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="s">&quot;345&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;567&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">attrNL</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1">// lookup an item from the database</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">getItem</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span><span class="n">attrS</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">)).</span><span class="na">valueOrNull</span><span class="p">()</span><span class="o">!!</span><span class="p">.</span><span class="na">item</span><span class="o">!!</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">str</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attrS</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="c1">// all operations return a Result monad of the API type</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">deleteResult</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">TableDescriptionResponse</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">deleteTable</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">deleteResult</span><span class="p">)</span>
+</code></pre></div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/index-min.js"></script>
+<script src="/js/toggle-search.js"></script>
+
+      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+
+
+
+
+
+
+
+
+
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-125143867-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+  apiKey: atob(ak),
+  indexName: 'http4k',
+  inputSelector: '#search',
+  debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+</body>
+</html>
