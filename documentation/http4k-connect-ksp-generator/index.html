@@ -29,7 +29,7 @@
 
 
 
-<link rel="canonical" href="https://connect.http4k.org/documentation/ai/langchain/">
+<link rel="canonical" href="https://connect.http4k.org/documentation/http4k-connect-ksp-generator/">
 
 
 
@@ -83,19 +83,19 @@
     
     
     
-    <title>LangChain - http4k Connect</title>
+    <title>Gradle KSP Plugin - http4k Connect</title>
     
     
     <!-- Theme-related style sheets -->
     
-    <link rel="stylesheet" href="../../../assets/stylesheets/main.css" />
+    <link rel="stylesheet" href="../../assets/stylesheets/main.css" />
 
     <!-- Extra color palette -->
     
     
     <link
         rel="stylesheet"
-        href="../../../assets/stylesheets/palette.css"
+        href="../../assets/stylesheets/palette.css"
     />
     
 
@@ -114,7 +114,7 @@
     
     <link rel="stylesheet" href="/css/main.css"/>
     
-    <link rel="stylesheet" href="../../../css/site.css">
+    <link rel="stylesheet" href="../../css/site.css">
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
@@ -145,7 +145,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../index.m"
+               href="../index.m"
                title="Introduction">Introduction</a>
         </li>
     
@@ -157,7 +157,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../../changelog/"
+               href="../../changelog/"
                title="Changelog">Changelog</a>
         </li>
     
@@ -169,7 +169,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../../contributing/"
+               href="../../contributing/"
                title="Contribute/support http4k">Contribute/support http4k</a>
         </li>
     
@@ -181,7 +181,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../../code-of-conduct/"
+               href="../../code-of-conduct/"
                title="Code of Conduct">Code of Conduct</a>
         </li>
     
@@ -192,8 +192,8 @@
         
     
         <li class="nav-item">
-            <a class="nav-link "
-               href="../../http4k-connect-ksp-generator/"
+            <a class="nav-link active"
+               href="./"
                title="Gradle KSP Plugin">Gradle KSP Plugin</a>
         </li>
     
@@ -203,20 +203,20 @@
         
         
     
-        <li class="nav-item dropdown active show">
-            <a class="nav-link dropdown-toggle active"
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
                data-toggle="dropdown"
                href="#"
                role="button"
                aria-haspopup="true"
-               aria-expanded="true">AI</a>
-            <div class="dropdown-menu show">
+               aria-expanded="false">AI</a>
+            <div class="dropdown-menu ">
             
             
             
     
-        <a class="dropdown-item active"
-           href="./"
+        <a class="dropdown-item "
+           href="../ai/langchain/"
            title="LangChain">LangChain</a>
     
 
@@ -225,7 +225,7 @@
             
     
         <a class="dropdown-item "
-           href="../lmstudio/"
+           href="../ai/lmstudio/"
            title="LMStudio">LMStudio</a>
     
 
@@ -234,7 +234,7 @@
             
     
         <a class="dropdown-item "
-           href="../ollama/"
+           href="../ai/ollama/"
            title="Ollama">Ollama</a>
     
 
@@ -243,7 +243,7 @@
             
     
         <a class="dropdown-item "
-           href="../openai/"
+           href="../ai/openai/"
            title="OpenAI">OpenAI</a>
     
 
@@ -270,7 +270,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/apprunner/"
+           href="../amazon/apprunner/"
            title="App Runner">App Runner</a>
     
 
@@ -279,7 +279,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/cloudfront/"
+           href="../amazon/cloudfront/"
            title="Cloudfront">Cloudfront</a>
     
 
@@ -288,7 +288,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/cloudwatchlogs/"
+           href="../amazon/cloudwatchlogs/"
            title="Cloudwatch Logs">Cloudwatch Logs</a>
     
 
@@ -297,7 +297,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/cognito/"
+           href="../amazon/cognito/"
            title="Cognito">Cognito</a>
     
 
@@ -306,7 +306,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/containercredentials/"
+           href="../amazon/containercredentials/"
            title="Container Credentials">Container Credentials</a>
     
 
@@ -315,7 +315,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/dynamodb/"
+           href="../amazon/dynamodb/"
            title="DynamoDB">DynamoDB</a>
     
 
@@ -324,7 +324,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/eventbridge/"
+           href="../amazon/eventbridge/"
            title="EventBridge">EventBridge</a>
     
 
@@ -333,7 +333,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/evidently/"
+           href="../amazon/evidently/"
            title="Evidently">Evidently</a>
     
 
@@ -342,7 +342,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/firehose/"
+           href="../amazon/firehose/"
            title="Firehose">Firehose</a>
     
 
@@ -351,7 +351,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/iamidentitycenter/"
+           href="../amazon/iamidentitycenter/"
            title="IAM Identity Center">IAM Identity Center</a>
     
 
@@ -360,7 +360,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/instancemetadata/"
+           href="../amazon/instancemetadata/"
            title="Instance Metadata">Instance Metadata</a>
     
 
@@ -369,7 +369,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/kms/"
+           href="../amazon/kms/"
            title="KMS">KMS</a>
     
 
@@ -378,7 +378,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/lambda/"
+           href="../amazon/lambda/"
            title="Lambda">Lambda</a>
     
 
@@ -387,7 +387,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/s3/"
+           href="../amazon/s3/"
            title="S3">S3</a>
     
 
@@ -396,7 +396,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/secretsmanager/"
+           href="../amazon/secretsmanager/"
            title="Secrets Manager">Secrets Manager</a>
     
 
@@ -405,7 +405,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/ses/"
+           href="../amazon/ses/"
            title="SES">SES</a>
     
 
@@ -414,7 +414,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/sns/"
+           href="../amazon/sns/"
            title="SNS">SNS</a>
     
 
@@ -423,7 +423,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/sqs/"
+           href="../amazon/sqs/"
            title="SQS">SQS</a>
     
 
@@ -432,7 +432,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/sts/"
+           href="../amazon/sts/"
            title="STS">STS</a>
     
 
@@ -441,7 +441,7 @@
             
     
         <a class="dropdown-item "
-           href="../../amazon/systemsmanager/"
+           href="../amazon/systemsmanager/"
            title="Systems Manager">Systems Manager</a>
     
 
@@ -457,7 +457,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../github/"
+               href="../github/"
                title="GitHub">GitHub</a>
         </li>
     
@@ -469,7 +469,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../gitlab/"
+               href="../gitlab/"
                title="GitLab">GitLab</a>
         </li>
     
@@ -492,7 +492,7 @@
             
     
         <a class="dropdown-item "
-           href="../../google/analytics-ua/"
+           href="../google/analytics-ua/"
            title="Analytics UA">Analytics UA</a>
     
 
@@ -501,7 +501,7 @@
             
     
         <a class="dropdown-item "
-           href="../../google/analytics-ga4/"
+           href="../google/analytics-ga4/"
            title="Analytics V4">Analytics V4</a>
     
 
@@ -528,7 +528,7 @@
             
     
         <a class="dropdown-item "
-           href="../../kafka/rest/"
+           href="../kafka/rest/"
            title="REST Gateway">REST Gateway</a>
     
 
@@ -537,7 +537,7 @@
             
     
         <a class="dropdown-item "
-           href="../../kafka/schemaregistry/"
+           href="../kafka/schemaregistry/"
            title="Schema Registry">Schema Registry</a>
     
 
@@ -553,7 +553,7 @@
     
         <li class="nav-item">
             <a class="nav-link "
-               href="../../mattermost/"
+               href="../mattermost/"
                title="Mattermost">Mattermost</a>
         </li>
     
@@ -576,7 +576,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/core/"
+           href="../storage/core/"
            title="File">File</a>
     
 
@@ -585,7 +585,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/http/"
+           href="../storage/http/"
            title="HTTP">HTTP</a>
     
 
@@ -594,7 +594,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/core/"
+           href="../storage/core/"
            title="File">File</a>
     
 
@@ -603,7 +603,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/jdbc/"
+           href="../storage/jdbc/"
            title="JDBC">JDBC</a>
     
 
@@ -612,7 +612,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/redis/"
+           href="../storage/redis/"
            title="Redis">Redis</a>
     
 
@@ -621,7 +621,7 @@
             
     
         <a class="dropdown-item "
-           href="../../storage/s3/"
+           href="../storage/s3/"
            title="S3">S3</a>
     
 
@@ -647,24 +647,7 @@
                     <img class="mb-3 sideToggle" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
                     
                     
-                    <h1 id="langchain">LangChain<a class="headerlink" href="#langchain" title="Permanent link">&para;</a></h1>
-<p>LangChain4J is a versatile library that simplifies the creation and management of language processing workflows., It provides many integrations but does not allow for using http4k clients or http4k-connect adapters. This module gives you some of these integrations by providing LangChain model adapters.</p>
-<p>Current adapters support http4k client integrations for the following models, allowing you to use them in your http4k applications:</p>
-<ul>
-<li>OpenAI</li>
-<li>OpenAiChatLanguageModel</li>
-<li>OpenAiChatImageModel</li>
-<li>OpenAiChatEmbeddingModel</li>
-<li>Ollama</li>
-<li>OllamaChatLanguageModel</li>
-<li>OllamaChatImageModel</li>
-<li>OllamaChatEmbeddingModel</li>
-<li>S3 Document Loaders</li>
-</ul>
-<p>Using these adapters is as simple as:</p>
-<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">model</span><span class="p">:</span><span class="w"> </span><span class="n">ChatLanguageModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpenAiChatLanguageModel</span><span class="p">(</span><span class="n">OpenAI</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">OpenAIToken</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">FakeOpenAI</span><span class="p">()))</span>
-<span class="kd">val</span><span class="w"> </span><span class="nv">chat</span><span class="p">:</span><span class="w"> </span><span class="n">Response</span><span class="o">&lt;</span><span class="n">AiMessage</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="na">generate</span><span class="p">(</span><span class="s">&quot;hello kitty&quot;</span><span class="p">)</span>
-</code></pre></div>
+                    <h1 id="gradle_ksp_plugin">Gradle KSP Plugin<a class="headerlink" href="#gradle_ksp_plugin" title="Permanent link">&para;</a></h1>
                     
                 </div>
             </div>
@@ -676,12 +659,12 @@
 <script src="/js/index-min.js"></script>
 <script src="/js/toggle-search.js"></script>
 
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
 
 
 
 
-<script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+<script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
 
 
 

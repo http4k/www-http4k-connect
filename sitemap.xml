@@ -171,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://connect.http4k.org/documentation/http4k-connect-ksp-generator/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://connect.http4k.org/documentation/kafka/rest/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
