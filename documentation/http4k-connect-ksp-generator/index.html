@@ -648,6 +648,63 @@
                     
                     
                     <h1 id="gradle_ksp_plugin">Gradle KSP Plugin<a class="headerlink" href="#gradle_ksp_plugin" title="Permanent link">&para;</a></h1>
+<p>http4k-connect ships with a KSP plugin to automate the generation of the adapter extension-methods that accompany each Connect adapter. This allows you to skip creating 
+those extensions manually and maintain the API of the adapter appears to contain methods for each Action.</p>
+<h2 id="generating_extension_methods_for_your_adapters">Generating extension methods for your adapters<a class="headerlink" href="#generating_extension_methods_for_your_adapters" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Define your base Action (and interface) using the http4k base class and tag it with the Http4kConnectAction annotation:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">APIAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;&gt;</span>
+
+<span class="nd">@Http4kConnectAction</span>
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Reverse</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">APIAction</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">toRequest</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Request</span><span class="p">(</span><span class="n">POST</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/reverse&quot;</span><span class="p">).</span><span class="na">body</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">toResult</span><span class="p">(</span><span class="n">response</span><span class="p">:</span><span class="w"> </span><span class="n">Response</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">Success</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">bodyString</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Define your API adapter, tagging it with the Http4kConnectAdapter annotation:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="nd">@Http4kConnectAdapter</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">API</span><span class="p">(</span><span class="n">rawHttp</span><span class="p">:</span><span class="w"> </span><span class="n">HttpHandler</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">transport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SetBaseUriFrom</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;https://api.com&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">rawHttp</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="n">APIAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">action</span><span class="p">.</span><span class="na">toResult</span><span class="p">(</span><span class="n">transport</span><span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="na">toRequest</span><span class="p">()))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Install KSP into Gradle, apply it, and create a KSP configuration using the http4k-connect KSP plugin in your module:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">&quot;jvm&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;com.google.devtools.ksp&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">apply</span><span class="p">(</span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.google.devtools.ksp&quot;</span><span class="p">)</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ksp</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-ksp-generator&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>And that's it! When Gradle runs, the following extension function will be generated:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kd">fun</span><span class="w"> </span><span class="n">API</span><span class="p">.</span><span class="nf">reverse</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">Reverse</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</code></pre></div>
+
+<p>... which allows anyone to call it as if it was a standard method:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">API</span><span class="p">(</span><span class="n">JavaHttpClient</span><span class="p">())</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+</code></pre></div>
                     
                 </div>
             </div>
