@@ -16,202 +16,222 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/</loc>
+         <loc>https://connect.http4k.org/guide/concepts/api-adapters/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/ai/langchain/</loc>
+         <loc>https://connect.http4k.org/guide/concepts/system-fakes/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/ai/lmstudio/</loc>
+         <loc>https://connect.http4k.org/guide/howto/implement-your-own-adapters/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/ai/ollama/</loc>
+         <loc>https://connect.http4k.org/guide/howto/pimp-your-adapters-with-ksp/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/ai/openai/</loc>
+         <loc>https://connect.http4k.org/guide/reference/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/</loc>
+         <loc>https://connect.http4k.org/guide/reference/ai/langchain/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/apprunner/</loc>
+         <loc>https://connect.http4k.org/guide/reference/ai/lmstudio/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/cloudfront/</loc>
+         <loc>https://connect.http4k.org/guide/reference/ai/ollama/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/cloudwatchlogs/</loc>
+         <loc>https://connect.http4k.org/guide/reference/ai/openai/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/cognito/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/containercredentials/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/apprunner/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/dynamodb/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/cloudfront/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/eventbridge/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/cloudwatchlogs/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/evidently/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/cognito/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/firehose/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/containercredentials/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/iamidentitycenter/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/dynamodb/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/instancemetadata/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/eventbridge/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/kms/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/evidently/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/lambda/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/firehose/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/s3/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/iamidentitycenter/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/secretsmanager/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/instancemetadata/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/ses/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/kms/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/sns/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/lambda/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/sqs/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/s3/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/sts/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/secretsmanager/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/amazon/systemsmanager/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/ses/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/example/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/sns/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/github/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/sqs/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/gitlab/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/sts/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/google/analytics-ga4/</loc>
+         <loc>https://connect.http4k.org/guide/reference/amazon/systemsmanager/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/google/analytics-ua/</loc>
+         <loc>https://connect.http4k.org/guide/reference/example/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/http4k-connect-ksp-generator/</loc>
+         <loc>https://connect.http4k.org/guide/reference/github/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/kafka/rest/</loc>
+         <loc>https://connect.http4k.org/guide/reference/gitlab/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/kafka/schemaregistry/</loc>
+         <loc>https://connect.http4k.org/guide/reference/google/analytics-ga4/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/mattermost/</loc>
+         <loc>https://connect.http4k.org/guide/reference/google/analytics-ua/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/storage/core/</loc>
+         <loc>https://connect.http4k.org/guide/reference/http4k-connect-ksp-generator/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/storage/http/</loc>
+         <loc>https://connect.http4k.org/guide/reference/kafka/rest/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/storage/jdbc/</loc>
+         <loc>https://connect.http4k.org/guide/reference/kafka/schemaregistry/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/storage/redis/</loc>
+         <loc>https://connect.http4k.org/guide/reference/mattermost/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/documentation/storage/s3/</loc>
+         <loc>https://connect.http4k.org/guide/reference/storage/core/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/guide/reference/storage/http/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/guide/reference/storage/jdbc/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/guide/reference/storage/redis/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://connect.http4k.org/guide/reference/storage/s3/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
