@@ -648,6 +648,22 @@
                     
                     
                     <h1 id="s3_storage">S3 Storage<a class="headerlink" href="#s3_storage" title="Permanent link">&para;</a></h1>
+<p>This implementation uses the http4k Connect adapter to store the data in S3. All data is serialised to disk by
+passing it though an http4k AutoMarshalling adapter (see the <code>http4k-format-XXX</code> modules). In the example below we use a
+JSON adapter backed by Moshi (which is the default).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AnEntity</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">awsCredentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AwsCredentials</span><span class="p">(</span><span class="s">&quot;accessKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;secret&quot;</span><span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">bucketClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S3Bucket</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">BucketName</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;foobar&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Region</span><span class="p">.</span><span class="na">AP_EAST_1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">awsCredentials</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">JavaHttpClient</span><span class="p">(),</span><span class="w"> </span><span class="n">Clock</span><span class="p">.</span><span class="na">systemUTC</span><span class="p">())</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Storage</span><span class="p">.</span><span class="na">S3</span><span class="p">(</span><span class="n">bucketClient</span><span class="p">,</span><span class="w"> </span><span class="n">Moshi</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnEntity</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">)</span>
+</code></pre></div>
                     
                 </div>
             </div>

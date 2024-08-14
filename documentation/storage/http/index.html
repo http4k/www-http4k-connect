@@ -648,6 +648,16 @@
                     
                     
                     <h1 id="http_storage">HTTP Storage<a class="headerlink" href="#http_storage" title="Permanent link">&para;</a></h1>
+<p>This storage implementation provides the ability to mount another storage implementation remotely over HTTP inside an OpenAPI compatible server.</p>
+<p>You can mount the storage with: </p>
+<div class="codehilite"><pre><span></span><code><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AnEntity</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">baseStorage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Storage</span><span class="p">.</span><span class="na">InMemory</span><span class="o">&lt;</span><span class="n">AnEntity</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="n">baseStorage</span><span class="p">.</span><span class="na">asHttpHandler</span><span class="p">().</span><span class="na">asServer</span><span class="p">(</span><span class="n">SunHttp</span><span class="p">(</span><span class="m">8000</span><span class="p">)).</span><span class="na">start</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Then simply use your browser to see the OpenAPI specification at http://localhost:8000:</p>
+<p><img alt="openapi.png" src="openapi.png" width="100%"></p>
                     
                 </div>
             </div>
