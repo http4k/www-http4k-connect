@@ -672,57 +672,237 @@
                     
                     
                     <h1 id="http4k_connect_module_overview">http4k Connect module overview<a class="headerlink" href="#http4k_connect_module_overview" title="Permanent link">&para;</a></h1>
-<ul>
-<li>AWS<ul>
-<li><a href="./amazon/apprunner">AppRunner</a> -&gt; <code>"org.http4k:http4k-connect-amazon-apprunner"</code> / <code>"org.http4k:http4k-connect-amazon-apprunner-fake"</code></li>
-<li><a href="./amazon/kms">CloudFront</a> -&gt; <code>"org.http4k:http4k-connect-amazon-cloudfront"</code> / <code>"org.http4k:http4k-connect-amazon-cloudfront-fake"</code></li>
-<li><a href="./amazon/cloudwatchlogs">CloudWatchLogs</a> -&gt; <code>"org.http4k:http4k-connect-amazon-cloudwatchlogs"</code> / <code>"org.http4k:http4k-connect-amazon-cloudwatchlogs-fake"</code></li>
-<li><a href="./amazon/dynamodb">DynamoDb</a> -&gt; <code>"org.http4k:http4k-connect-amazon-dynamodb"</code> / <code>"org.http4k:http4k-connect-amazon-dynamodb-fake"</code></li>
-<li><a href="./amazon/eventbridge">EventBridge</a> -&gt; <code>"org.http4k:http4k-connect-amazon-eventbridge"</code> / <code>"org.http4k:http4k-connect-amazon-eventbridge-fake"</code></li>
-<li><a href="./amazon/evidently">Evidently</a> -&gt; <code>"org.http4k:http4k-connect-amazon-evidently"</code> / <code>"org.http4k:http4k-connect-amazon-evidently-fake"</code></li>
-<li><a href="./amazon/firehose">Firehose</a> -&gt; <code>"org.http4k:http4k-connect-amazon-firehose"</code> / <code>"org.http4k:http4k-connect-amazon-firehose-fake"</code></li>
-<li><a href="./amazon/iamidentitycenter">IAM Identity Center</a> -&gt; <code>"org.http4k:http4k-connect-amazon-iamidentitycenter"</code> / <code>"org.http4k:http4k-connect-amazon-iamidentitycenter-fake"</code></li>
-<li><a href="./amazon/instancemetadata">InstanceMetadataService</a> -&gt; <code>"org.http4k:http4k-connect-amazon-instancemetadata"</code> / <code>"org.http4k:http4k-connect-amazon-instancemetadata-fake"</code></li>
-<li><a href="./amazon/kms">KMS</a> -&gt; <code>"org.http4k:http4k-connect-amazon-kms"</code> / <code>"org.http4k:http4k-connect-amazon-kms-fake"</code></li>
-<li><a href="./amazon/lambda">Lambda</a> -&gt; <code>"org.http4k:http4k-connect-amazon-lambda"</code> / <code>"org.http4k:http4k-connect-amazon-lambda-fake"</code></li>
-<li><a href="./amazon/s3">S3</a> -&gt; <code>"org.http4k:http4k-connect-amazon-s3"</code> / <code>"org.http4k:http4k-connect-amazon-s3-fake"</code></li>
-<li><a href="./amazon/secretsmanager">SecretsManager</a> -&gt; <code>"org.http4k:http4k-connect-amazon-secretsmanager"</code> / <code>"org.http4k:http4k-connect-amazon-secretsmanager-fake"</code></li>
-<li><a href="./amazon/ses">SES</a> -&gt; <code>"org.http4k:http4k-connect-amazon-ses"</code> / <code>"org.http4k:http4k-connect-amazon-ses-fake"</code></li>
-<li><a href="./amazon/sns">SNS</a> -&gt; <code>"org.http4k:http4k-connect-amazon-sns"</code> / <code>"org.http4k:http4k-connect-amazon-sns-fake"</code></li>
-<li><a href="./amazon/sqs">SQS</a> -&gt; <code>"org.http4k:http4k-connect-amazon-sqs"</code> / <code>"org.http4k:http4k-connect-amazon-sqs-fake"</code></li>
-<li><a href="./amazon/sts">STS</a> -&gt; <code>"org.http4k:http4k-connect-amazon-sts"</code> / <code>"org.http4k:http4k-connect-amazon-sts-fake"</code></li>
-<li><a href="./amazon/systemsmanager">SystemsManager</a> -&gt; <code>"org.http4k:http4k-connect-amazon-systemsmanager"</code> / <code>"org.http4k:http4k-connect-amazon-systemsmanager-fake"</code></li>
-</ul>
-</li>
-<li><a href="./github">GitHub V3, App, Callback</a> -&gt; <code>"org.http4k:http4k-connect-github"</code></li>
-<li>Google Analytics<ul>
-<li><a href="./google/analytics-ga4">GA4</a> -&gt; <code>"org.http4k:http4k-connect-google-analytics-ga4"</code> / <code>"org.http4k:http4k-connect-google-analytic-ga4-fake"</code></li>
-<li><a href="./google/analytics-ua">UA</a> -&gt; <code>"org.http4k:http4k-connect-google-analytics-ua"</code> / <code>"org.http4k:http4k-connect-google-analytic-ua-fake"</code></li>
-</ul>
-</li>
-<li>Kafka<ul>
-<li><a href="kafka/rest">Rest Proxy</a> -&gt; <code>"org.http4k:http4k-connect-kafka-rest"</code> / <code>"org.http4k:http4k-connect-kafka-rest-fake"</code></li>
-<li><a href="kafka/schemaregistry">Schema Registry</a> -&gt; <code>"org.http4k:http4k-connect-kafka-schemaregistry"</code> / <code>"org.http4k:http4k-connect-kafka-schemaregistry-fake"</code></li>
-</ul>
-</li>
-<li><a href="./mattermost">Mattermost Webhook</a> -&gt; <code>"org.http4k:http4k-connect-mattermost"</code> / <code>"org.http4k:http4k-connect-mattermost-fake"</code></li>
-<li>AI:<ul>
-<li><a href="./ai/langchain">LangChain4J</a> -&gt; <code>"org.http4k:http4k-connect-ai-langchain"</code></li>
-<li><a href="./ai/lmstudio">LmStudio</a> -&gt; <code>"org.http4k:http4k-connect-ai-lmstudio"</code> / <code>"org.http4k:http4k-connect-ai-lmstudio-fake"</code></li>
-<li><a href="./ai/openai">OpenAI</a> -&gt; <code>"org.http4k:http4k-connect-ai-openai"</code> / <code>"org.http4k:http4k-connect-ai-openai-plugin"</code>/ <code>"org.http4k:http4k-connect-ai-openai-fake"</code></li>
-<li><a href="./ai/ollama">Ollama</a> -&gt; <code>"org.http4k:http4k-connect-ai-ollama"</code> / <code>"org.http4k:http4k-connect-ai-ollama-fake"</code></li>
-</ul>
-</li>
-<li><a href="./example">Example Template</a> -&gt; <code>"org.http4k:http4k-connect-example"</code> / <code>"org.http4k:http4k-connect-example-fake"</code></li>
-</ul>
-<h2 id="supported_storage_backends_named_http4k-connect-storage-technology">Supported Storage backends (named http4k-connect-storage-{technology}&gt;)<a class="headerlink" href="#supported_storage_backends_named_http4k-connect-storage-technology" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="./storage/core">In-Memory</a> (included with all Fakes)</li>
-<li><a href="./storage/core">File-Based</a> (included with all Fakes)</li>
-<li><a href="./storage/jdbc">JDBC</a> -&gt; <code>org.http4k:http4k-connect-storage-jdbc</code></li>
-<li><a href="./storage/redis">Redis</a> -&gt; <code>org.http4k:http4k-connect-storage-redis</code></li>
-<li><a href="./storage/s3">S3</a> -&gt; <code>org.http4k:http4k-connect-storage-s3</code></li>
-</ul>
+<h3 id="cloud_services">Cloud Services<a class="headerlink" href="#cloud_services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>System</th>
+<th>Fake</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/apprunner">AppRunner</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/cloudfront">CloudFront</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/cloudwatchlogs">Cloudwatch Logs</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/dynamodb">DynamoDb</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/eventbridge">EventBridge</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/evidently">Evidently</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/firehose">Firehose</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/iamidentitycenter">IAM Identity Center</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/instancemetadata">Instance Metadata</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/kms">KMS</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/lambda">Lambda</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/s3">S3</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/secretsmanager">Secrets Manager</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/ses">SES</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/sns">SNS</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/sqs">SQS</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/sts">STS</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS</td>
+<td><a href="./amazon/systemsmanager">Systems Manager</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>V3 API</td>
+<td>❌</td>
+<td>Adapter Shell and WebHook Signing only</td>
+</tr>
+<tr>
+<td>GitLab</td>
+<td>API</td>
+<td>❌</td>
+<td>Adapter Shell and WebHook Signing only</td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="./google/analytics-ga4">Analytics GA4</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="./google/analytics-ua">Analytics UA</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Kafka</td>
+<td><a href="./kafka/rest">Rest Proxy</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Kafka</td>
+<td><a href="./kafka/schemaregistry">Schema Registry</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Mattermost</td>
+<td><a href="./mattermost">WebHook</a></td>
+<td>❌</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai_services">AI Services<a class="headerlink" href="#ai_services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>System</th>
+<th>Fake</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangChain4J</td>
+<td><a href="./langchain">Adapters</a></td>
+<td>❌</td>
+<td>Adapters to be plugged into LangChains</td>
+</tr>
+<tr>
+<td>LM Studio</td>
+<td><a href="./lmstudio">API</a></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Ollama</td>
+<td><a href="./ollama">API</a></td>
+<td>✅</td>
+<td>Includes content generators and image generation</td>
+</tr>
+<tr>
+<td>Open AI</td>
+<td><a href="./openai">API</a></td>
+<td>✅</td>
+<td>Includes content generators and image generation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage_implementations">Storage Implementations<a class="headerlink" href="#storage_implementations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./storage/core">In-Memory</a></td>
+<td>Included with all Fakes</td>
+</tr>
+<tr>
+<td><a href="./storage/core">File-Based</a></td>
+<td>Included with all Fakes</td>
+</tr>
+<tr>
+<td><a href="./storage/jdbc">JDBC</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./storage/redis">Redis</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./storage/s3">S3</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
                     
                 </div>
             </div>
