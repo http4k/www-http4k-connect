@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://connect.http4k.org/documentation/</loc>
+         <lastmod>2024-08-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://connect.http4k.org/guide/concepts/api-adapters/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
