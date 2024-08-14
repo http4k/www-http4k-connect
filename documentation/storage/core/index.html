@@ -648,6 +648,41 @@
                     
                     
                     <h1 id="storage_core">Storage Core<a class="headerlink" href="#storage_core" title="Permanent link">&para;</a></h1>
+<p>http4k-connect contains a simple lightweight pluggable Key-Value storage abstraction in the <code>http4k-connect-storage-core</code> module, which can be used to serialise objects to an underlying store.</p>
+<p>Standard Operations are:</p>
+<ul>
+<li>Set</li>
+<li>Get</li>
+<li>Remove</li>
+<li>Get all keys with a particular prefix</li>
+<li>Remove all keys with a particular prefix</li>
+</ul>
+<h3 id="in-memory_storage">In-Memory Storage<a class="headerlink" href="#in-memory_storage" title="Permanent link">&para;</a></h3>
+<p>All data is held in process memory.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AnEntity</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Storage</span><span class="p">.</span><span class="na">InMemory</span><span class="p">()</span>
+<span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnEntity</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="on-disk_storage">On-Disk Storage<a class="headerlink" href="#on-disk_storage" title="Permanent link">&para;</a></h3>
+<p>All data is serialised to disk by passing it though an http4k AutoMarshalling adapter (see the <code>http4k-format-XXX</code> modules). In the example below we use a JSON adapter backed by Moshi (which is the default).</p>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nn">java.io.File</span>
+
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AnEntity</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Storage</span><span class="p">.</span><span class="na">Disk</span><span class="p">(</span><span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Moshi</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnEntity</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">)</span>
+</code></pre></div>
                     
                 </div>
             </div>

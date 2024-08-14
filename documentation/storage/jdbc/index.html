@@ -648,6 +648,25 @@
                     
                     
                     <h1 id="jdbc_storage">JDBC Storage<a class="headerlink" href="#jdbc_storage" title="Permanent link">&para;</a></h1>
+<p>This implementation uses the Jetbrains Exposed library to store the data in the DB. All data is serialised to disk by
+passing it though an http4k AutoMarshalling adapter (see the <code>http4k-format-XXX</code> modules). In the example below we use a
+JSON adapter backed by Moshi (which is the default).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">AnEntity</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">ds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HikariDataSource</span><span class="p">(</span>
+<span class="w">    </span><span class="n">HikariConfig</span><span class="p">().</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">driverClassName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;org.h2.Driver&quot;</span>
+<span class="w">        </span><span class="n">jdbcUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jdbc:h2:mem:</span><span class="si">$</span><span class="n">name</span><span class="s">;DB_CLOSE_DELAY=-1&quot;</span>
+<span class="w">    </span><span class="p">})</span>
+
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Storage</span><span class="p">.</span><span class="na">Jdbc</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mytable&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Moshi</span><span class="p">)</span>
+<span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnEntity</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">storage</span><span class="o">[</span><span class="s">&quot;myKey&quot;</span><span class="o">]</span><span class="p">)</span>
+
+<span class="n">storage</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">)</span>
+</code></pre></div>
                     
                 </div>
             </div>
