@@ -672,6 +672,13 @@
                     
                     
                     <h1 id="kafka_schema_registry">Kafka Schema Registry<a class="headerlink" href="#kafka_schema_registry" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-kafka-schemaregistry&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-kafka-schemaregistry-fake&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>The main <code>SchemaRegistry</code> connector provides the following Actions:</p>
 <ul>
 <li>CheckSchemaRegistered</li>

@@ -672,6 +672,12 @@
                     
                     
                     <h1 id="langchain">LangChain<a class="headerlink" href="#langchain" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-ai-langchain&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>LangChain4J is a versatile library that simplifies the creation and management of language processing workflows., It provides many integrations but does not allow for using http4k clients or http4k-connect adapters. This module gives you some of these integrations by providing LangChain model adapters.</p>
 <p>Current adapters support http4k client integrations for the following models, allowing you to use them in your http4k applications:</p>
 <ul>

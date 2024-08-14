@@ -672,6 +672,13 @@
                     
                     
                     <h1 id="openai">OpenAI<a class="headerlink" href="#openai" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-ai-openai&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-ai-openai-fake&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>The http4k-connect OpenAI integration provides:
 - OpenAI API client
 - Plugin SDK for developing <a href="https://platform.openai.com/docs/plugins">OpenAI plugins</a>
