@@ -672,6 +672,13 @@
                     
                     
                     <h1 id="security_token_service">Security Token Service<a class="headerlink" href="#security_token_service" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-amazon-sts&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-amazon-sts-fake&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>The STS connector provides the following Actions:</p>
 <div class="codehilite"><pre><span></span><code> <span class="k">*</span>  AssumeRole
  <span class="k">*</span>  AssumeRoleWithWebIdentity

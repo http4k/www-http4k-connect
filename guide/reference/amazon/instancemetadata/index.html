@@ -672,6 +672,13 @@
                     
                     
                     <h1 id="instance_metadata_service">Instance Metadata Service<a class="headerlink" href="#instance_metadata_service" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-amazon-instancemetadata&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-amazon-instancemetadata-fake&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata Service</a> V1 connector provides the following Actions:</p>
 <div class="codehilite"><pre><span></span><code> <span class="k">*</span>  GetAmiId
  <span class="k">*</span>  GetHostName
