@@ -683,7 +683,7 @@
                     <img class="mb-3 sideToggle" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
                     
                     
-                    <h1 id="pimp_your_api_clients_with_ksp">Pimp your API clients with KSP!<a class="headerlink" href="#pimp_your_api_clients_with_ksp" title="Permanent link">&para;</a></h1>
+                    <h1 id="pimp_your_api_clients_with_ksp">Pimp your API Clients with KSP!<a class="headerlink" href="#pimp_your_api_clients_with_ksp" title="Permanent link">&para;</a></h1>
 <p>http4k-connect ships with a KSP plugin to automate the generation of the client extension-methods that accompany each Connect client. This allows you to skip creating
 those extensions manually and maintain the API of the client appears to contain methods for each Action.</p>
 <h2 id="generating_extension_methods_for_your_clients">Generating extension methods for your clients<a class="headerlink" href="#generating_extension_methods_for_your_clients" title="Permanent link">&para;</a></h2>
@@ -699,7 +699,7 @@ those extensions manually and maintain the API of the client appears to contain 
 <span class="p">}</span>
 </code></pre></div>
 
-<p>2 - Define your API client, tagging it with the Http4kConnectClient annotation:</p>
+<p>2 - Define your API Client, tagging it with the Http4kConnectClient annotation:</p>
 <div class="codehilite"><pre><span></span><code><span class="nd">@Http4kConnectClient</span>
 <span class="kd">class</span><span class="w"> </span><span class="nc">API</span><span class="p">(</span><span class="n">rawHttp</span><span class="p">:</span><span class="w"> </span><span class="n">HttpHandler</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">transport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SetBaseUriFrom</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;https://api.com&quot;</span><span class="p">))</span>
