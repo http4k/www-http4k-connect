@@ -15,21 +15,21 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-<meta itemprop="name" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta itemprop="name" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
 <meta property="og:image" content="https://connect.http4k.org/img/logo-intro.png">
-<meta name="twitter:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="twitter:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 <meta property="twitter:image" content="https://connect.http4k.org/img/logo-intro.png">
 
 
 
-<meta name="description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
-<meta name="twitter:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta name="twitter:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 
 
 
-<link rel="canonical" href="https://connect.http4k.org/guide/concepts/api-adapters/">
+<link rel="canonical" href="https://connect.http4k.org/guide/howto/pimp-your-clients-with-ksp/">
 
 
 
@@ -83,7 +83,7 @@
     
     
     
-    <title>API Adapters - http4k Connect</title>
+    <title>Pimp your API clients with KSP! - http4k Connect</title>
     
     
     <!-- Theme-related style sheets -->
@@ -155,21 +155,21 @@
         
         
     
-        <li class="nav-item dropdown active show">
-            <a class="nav-link dropdown-toggle active"
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle "
                data-toggle="dropdown"
                href="#"
                role="button"
                aria-haspopup="true"
-               aria-expanded="true">Concepts</a>
-            <div class="dropdown-menu show">
+               aria-expanded="false">Concepts</a>
+            <div class="dropdown-menu ">
             
             
             
     
-        <a class="dropdown-item active"
-           href="./"
-           title="API Adapters">API Adapters</a>
+        <a class="dropdown-item "
+           href="../../concepts/api-clients/"
+           title="API Clients">API Clients</a>
     
 
             
@@ -177,7 +177,7 @@
             
     
         <a class="dropdown-item "
-           href="../system-fakes/"
+           href="../../concepts/system-fakes/"
            title="System Fakes">System Fakes</a>
     
 
@@ -191,30 +191,30 @@
         
         
     
-        <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle "
+        <li class="nav-item dropdown active show">
+            <a class="nav-link dropdown-toggle active"
                data-toggle="dropdown"
                href="#"
                role="button"
                aria-haspopup="true"
-               aria-expanded="false">How To</a>
-            <div class="dropdown-menu ">
+               aria-expanded="true">How To</a>
+            <div class="dropdown-menu show">
             
             
             
     
         <a class="dropdown-item "
-           href="../../howto/implement-your-own-adapters/"
-           title="Implement your own adapters">Implement your own adapters</a>
+           href="../implement-your-own-clients/"
+           title="Implement your own API clients">Implement your own API clients</a>
     
 
             
             
             
     
-        <a class="dropdown-item "
-           href="../../howto/pimp-your-adapters-with-ksp/"
-           title="Pimp your adapters with KSP!">Pimp your adapters with KSP!</a>
+        <a class="dropdown-item active"
+           href="./"
+           title="Pimp your API clients with KSP!">Pimp your API clients with KSP!</a>
     
 
             
@@ -683,35 +683,55 @@
                     <img class="mb-3 sideToggle" src="/img/exchange-icon.svg" width="20" alt="" srcset=""/>
                     
                     
-                    <h1>API Adapters</h1>
-                    
-                    <p>Each system API Adapter is modelled as a single function with arity 1 (that is it takes only a single parameter) returning a <a href="https://github.com/fork-handles/forkhandles/tree/trunk/result4k">Result4k</a> Success/Failure monad type), which is known as an <code>Action</code>. The Client is responsible for managing the overall protocol with the remote system. There are also a set of extension methods generated to provide a more traditional function-based version of the same interface.</p>
-<p>The module naming scheme for API Adapters is:</p>
-<h3 id="orghttp4khttp4k-connect-vendor-system">org.http4k:http4k-connect-{vendor}-{system}<a class="headerlink" href="#orghttp4khttp4k-connect-vendor-system" title="Permanent link">&para;</a></h3>
-<p>Action classes are responsible for constructing the HTTP requests and unmarshalling their responses into the http4k-connect types. There are lots of common actions built-in, but you can provide your own by simply implementing the relevant Action interface. The recommended pattern in http4k-connect is to use a Result monad type (we use Result4k) to represent the result type, but you can use anything to suit your programming model.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Generic system interface</span>
-<span class="kd">interface</span><span class="w"> </span><span class="nc">Example</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">R</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Any</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">request</span><span class="p">:</span><span class="w"> </span><span class="n">ExampleAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span>
+                    <h1 id="pimp_your_api_clients_with_ksp">Pimp your API clients with KSP!<a class="headerlink" href="#pimp_your_api_clients_with_ksp" title="Permanent link">&para;</a></h1>
+<p>http4k-connect ships with a KSP plugin to automate the generation of the client extension-methods that accompany each Connect client. This allows you to skip creating
+those extensions manually and maintain the API of the client appears to contain methods for each Action.</p>
+<h2 id="generating_extension_methods_for_your_clients">Generating extension methods for your clients<a class="headerlink" href="#generating_extension_methods_for_your_clients" title="Permanent link">&para;</a></h2>
+<p>1 - Define your base Action (and interface) using the http4k base class and tag it with the Http4kConnectAction annotation:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">APIAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;&gt;</span>
+
+<span class="nd">@Http4kConnectAction</span>
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Reverse</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">APIAction</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">toRequest</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Request</span><span class="p">(</span><span class="n">POST</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/reverse&quot;</span><span class="p">).</span><span class="na">body</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">toResult</span><span class="p">(</span><span class="n">response</span><span class="p">:</span><span class="w"> </span><span class="n">Response</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">Success</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">bodyString</span><span class="p">())</span>
 <span class="p">}</span>
-
-<span class="c1">// System-specific action</span>
-<span class="kd">interface</span><span class="w"> </span><span class="nc">ExampleAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;&gt;</span>
-
-<span class="c1">// Action and response classes</span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Echo</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ExampleAction</span><span class="o">&lt;</span><span class="n">Echoed</span><span class="o">&gt;</span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Echoed</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span>
-
-<span class="c1">// Traditional function helpers</span>
-<span class="kd">fun</span><span class="w"> </span><span class="n">Example</span><span class="p">.</span><span class="nf">echo</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Echoed</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">Echo</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 </code></pre></div>
 
-<h3 id="example_usage">Example usage<a class="headerlink" href="#example_usage" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c1">// constructing and using the clients</span>
-<span class="kd">val</span><span class="w"> </span><span class="nv">example</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">httpHandler</span><span class="p">)</span>
+<p>2 - Define your API client, tagging it with the Http4kConnectClient annotation:</p>
+<div class="codehilite"><pre><span></span><code><span class="nd">@Http4kConnectClient</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">API</span><span class="p">(</span><span class="n">rawHttp</span><span class="p">:</span><span class="w"> </span><span class="n">HttpHandler</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">transport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SetBaseUriFrom</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;https://api.com&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">rawHttp</span><span class="p">)</span>
 
-<span class="kd">val</span><span class="w"> </span><span class="nv">echoed</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Echoed</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example</span><span class="p">.</span><span class="na">echo</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
-<span class="c1">// or...</span>
-<span class="kd">val</span><span class="w"> </span><span class="nv">alsoEchoed</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Echoed</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example</span><span class="p">(</span><span class="n">Echo</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">action</span><span class="p">:</span><span class="w"> </span><span class="n">APIAction</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">):</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">action</span><span class="p">.</span><span class="na">toResult</span><span class="p">(</span><span class="n">transport</span><span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="na">toRequest</span><span class="p">()))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>3 - Install KSP into Gradle, apply it, and create a KSP configuration using the http4k-connect KSP plugin in your module:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">&quot;jvm&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;com.google.devtools.ksp&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">apply</span><span class="p">(</span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.google.devtools.ksp&quot;</span><span class="p">)</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">platform</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-bom:5.20.0.0&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ksp</span><span class="p">(</span><span class="s">&quot;org.http4k:http4k-connect-ksp-generator&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>4 - And that's it! When Gradle runs, the following extension function will be generated:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">fun</span><span class="w"> </span><span class="n">API</span><span class="p">.</span><span class="nf">reverse</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">Reverse</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</code></pre></div>
+
+<p>... which allows anyone to call it as if it was a standard method:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">API</span><span class="p">(</span><span class="n">JavaHttpClient</span><span class="p">())</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
 </code></pre></div>
                     
                 </div>

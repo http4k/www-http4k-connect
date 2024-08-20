@@ -15,17 +15,17 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-<meta itemprop="name" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta itemprop="name" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
 <meta property="og:image" content="https://connect.http4k.org/img/logo-intro.png">
-<meta name="twitter:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="twitter:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 <meta property="twitter:image" content="https://connect.http4k.org/img/logo-intro.png">
 
 
 
-<meta name="description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
-<meta name="twitter:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta name="twitter:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 
 
 
@@ -168,8 +168,8 @@
             
     
         <a class="dropdown-item "
-           href="../guide/concepts/api-adapters/"
-           title="API Adapters">API Adapters</a>
+           href="../guide/concepts/api-clients/"
+           title="API Clients">API Clients</a>
     
 
             
@@ -204,8 +204,8 @@
             
     
         <a class="dropdown-item "
-           href="../guide/howto/implement-your-own-adapters/"
-           title="Implement your own adapters">Implement your own adapters</a>
+           href="../guide/howto/implement-your-own-clients/"
+           title="Implement your own API clients">Implement your own API clients</a>
     
 
             
@@ -213,8 +213,8 @@
             
     
         <a class="dropdown-item "
-           href="../guide/howto/pimp-your-adapters-with-ksp/"
-           title="Pimp your adapters with KSP!">Pimp your adapters with KSP!</a>
+           href="../guide/howto/pimp-your-clients-with-ksp/"
+           title="Pimp your API clients with KSP!">Pimp your API clients with KSP!</a>
     
 
             
@@ -689,6 +689,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <h3 id="v52100_uncut">v5.21.0.0 (uncut)<a class="headerlink" href="#v52100_uncut" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies including Kotlin to 2.0.10</li>
+<li><strong>http4k-connect-core</strong> - Rename of <code>Http4kConnectAdapter</code> to <code>Http4kConnectClient</code></li>
 <li><strong>http4k-connect-ai-openai-</strong>** - [Breaking] Model ResponseFormat as a sealed class hierarchy. Removed ResponseFormatType as now inherent in the JSON marshalling. Alpha support for <code>json_schema</code> response format, but it's just a map right now with no class structure.</li>
 </ul>
 <h3 id="v52000">v5.20.0.0<a class="headerlink" href="#v52000" title="Permanent link">&para;</a></h3>
@@ -720,7 +721,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <li><strong>http4k-connect-ai-</strong>** - [Breaking] Repackaged <code>ModelName</code> to common location. Just update imports!</li>
 <li><strong>http4k-connect-ai-langchain</strong> -  [Breaking] Added support for LmStudio chat and embedding models. Break is
   renamed: <code>ChatModelOptions</code> to <code>OpenAiChatModelOptions</code>.</li>
-<li><strong>http4k-connect-ai-lmstudio</strong>* - [New module!] LmStudio adapter module and fake so you can connect to a locally
+<li><strong>http4k-connect-ai-lmstudio</strong>* - [New module!] LmStudio client module and fake so you can connect to a locally
   running LLM server running any model.</li>
 </ul>
 <h3 id="v51711">v5.17.1.1<a class="headerlink" href="#v51711" title="Permanent link">&para;</a></h3>
@@ -747,28 +748,28 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
 <li><strong>http4k-connect-ai-</strong>* - Migration of the various AI packages (OpenAI/Langchain) to <code>http4k-ai-</code> subpackage name. </li>
 <li><strong>http4k-connect-ai-openai</strong> - [Breaking] Use FloatArray for embeddings instead of <code>List&lt;Float&gt;</code></li>
-<li><strong>http4k-connect-ai-ollama</strong>* - [New module!] Ollama adapter module so you can use Http4k-connect adapters in
+<li><strong>http4k-connect-ai-ollama</strong>* - [New module!] Ollama client module so you can use Http4k-connect clients in
   LangChain apps.</li>
 <li><strong>http4k-connect-ai-langchain</strong> - Added support for Ollama models</li>
 </ul>
 <h3 id="v51602">v5.16.0.2<a class="headerlink" href="#v51602" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-ai-langchain</strong> - Properly support all message types in OpenAI Adapter.</li>
+<li><strong>http4k-connect-ai-langchain</strong> - Properly support all message types in OpenAI Client.</li>
 </ul>
 <h3 id="v51601">v5.16.0.1<a class="headerlink" href="#v51601" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-langchain</strong> - Tools requests cannot be empty for chat completions in OpenAI Adapter.</li>
+<li><strong>http4k-connect-langchain</strong> - Tools requests cannot be empty for chat completions in OpenAI Client.</li>
 </ul>
 <h3 id="v51600">v5.16.0.0<a class="headerlink" href="#v51600" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
-<li><strong>http4k-connect-langchain</strong> - [New module!] LangChain adapter module so you can use Http4k-connect adapters in LangChain apps. Currently only OpenAI is supported.</li>
+<li><strong>http4k-connect-langchain</strong> - [New module!] LangChain adapter module so you can use Http4k-connect clients in LangChain apps. Currently only OpenAI is supported.</li>
 <li><strong>http4k-connect-openai-</strong>* - [Breaking] Support tool calls and more modern API version for ChatCompletion.</li>
 </ul>
 <h3 id="v51500">v5.15.0.0<a class="headerlink" href="#v51500" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
-<li><strong>http4k-connect-amazon-sqs-</strong> - [Possible break] Implement JSON version of SQS in both fake and adapter. Ensure you are using an up-to-date version of the AWS SDK (which will support the JSON message format). Massive H/T @oharaandrew314</li>
+<li><strong>http4k-connect-amazon-sqs-</strong> - [Possible break] Implement JSON version of SQS in both fake and client. Ensure you are using an up-to-date version of the AWS SDK (which will support the JSON message format). Massive H/T @oharaandrew314</li>
 </ul>
 <h3 id="v51400">v5.14.0.0<a class="headerlink" href="#v51400" title="Permanent link">&para;</a></h3>
 <ul>
@@ -795,7 +796,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <h3 id="v51100">v5.11.0.0<a class="headerlink" href="#v51100" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies</li>
-<li><strong>http4k-connect-</strong>* - [Breaking] Reordering of the parameters in adapter constructors to put <code>overrideEndpoint</code> at the end of the list, since it is the least commonly used. To fix, just reorder your parameters.</li>
+<li><strong>http4k-connect-</strong>* - [Breaking] Reordering of the parameters in client constructors to put <code>overrideEndpoint</code> at the end of the list, since it is the least commonly used. To fix, just reorder your parameters.</li>
 </ul>
 <h3 id="v51010">v5.10.1.0<a class="headerlink" href="#v51010" title="Permanent link">&para;</a></h3>
 <ul>
@@ -910,7 +911,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <h3 id="v5510">v5.5.1.0<a class="headerlink" href="#v5510" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies</li>
-<li><strong>http4k-connect-gitlab</strong> - [New module] Basic adapter module</li>
+<li><strong>http4k-connect-gitlab</strong> - [New module] Basic client module</li>
 </ul>
 <h3 id="v5501">v5.5.0.1<a class="headerlink" href="#v5501" title="Permanent link">&para;</a></h3>
 <ul>
@@ -929,7 +930,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
 <li><strong>http4k-connect-</strong>* - [Breaking - dev] http4k-connect is now built with Java 21.</li>
-<li><strong>http4k-connect-amazon-iamidentitycenter</strong> - [New module] Adapter and fake implementation, plus interactive SSO login via a browser.</li>
+<li><strong>http4k-connect-amazon-iamidentitycenter</strong> - [New module] Client and fake implementation, plus interactive SSO login via a browser.</li>
 </ul>
 <h3 id="v5250">v5.2.5.0<a class="headerlink" href="#v5250" title="Permanent link">&para;</a></h3>
 <ul>
@@ -950,7 +951,7 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
 <li><strong>http4k-connect-amazon-dynamodb</strong> Present a more concise introduction to the DynamoDB table mapper. H/T @oharaandrew314</li>
-<li><strong>http4k-connect-amazon-cloudwatchlogs</strong> - [New module] Adapter and fake implementation.</li>
+<li><strong>http4k-connect-amazon-cloudwatchlogs</strong> - [New module] Client and fake implementation.</li>
 </ul>
 <h3 id="v5200">v5.2.0.0<a class="headerlink" href="#v5200" title="Permanent link">&para;</a></h3>
 <ul>
@@ -999,11 +1000,11 @@ changes with their rationale when appropriate. Given version <code>A.B.C.D</code
 </ul>
 <h3 id="v5120">v5.1.2.0<a class="headerlink" href="#v5120" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-amazon-eventbridge</strong> - [New module] Adapter and fake implementation.</li>
+<li><strong>http4k-connect-amazon-eventbridge</strong> - [New module] Client and fake implementation.</li>
 </ul>
 <h3 id="v5110">v5.1.1.0<a class="headerlink" href="#v5110" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-amazon-firehose</strong> - [New module] Adapter and fake implementation.</li>
+<li><strong>http4k-connect-amazon-firehose</strong> - [New module] Client and fake implementation.</li>
 </ul>
 <h3 id="v5100">v5.1.0.0<a class="headerlink" href="#v5100" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1194,7 +1195,7 @@ are supported. </li>
 <h3 id="v32710">v3.27.1.0<a class="headerlink" href="#v32710" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies.</li>
-<li><strong>http4k-connect-ksp-generator</strong>* - Generation of adapters is now done via KSP instead of KAPT.</li>
+<li><strong>http4k-connect-ksp-generator</strong>* - Generation of clients is now done via KSP instead of KAPT.</li>
 </ul>
 <h3 id="v32702">v3.27.0.2<a class="headerlink" href="#v32702" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1207,7 +1208,7 @@ are supported. </li>
 <h3 id="v32700">v3.27.0.0<a class="headerlink" href="#v32700" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-</strong>* - Upgrade dependencies, including Kotlin to 1.8.0</li>
-<li><strong>http4k-connect-ksp-generator</strong>* - [New module] A version of Action and Adapter code generator written using KSP.</li>
+<li><strong>http4k-connect-ksp-generator</strong>* - [New module] A version of Action and Client code generator written using KSP.</li>
 <li><strong>http4k-connect-amazon-instancemetadata</strong> - Add Amazon RegionProvider with environment, profile, and imds support. H/T @oharaandrew314</li>
 </ul>
 <h3 id="v32640">v3.26.4.0<a class="headerlink" href="#v32640" title="Permanent link">&para;</a></h3>
@@ -1218,7 +1219,7 @@ are supported. </li>
 </ul>
 <h3 id="v32630">v3.26.3.0<a class="headerlink" href="#v32630" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-cognito</strong> - We now generate action code using Kapt, as per the other adapters.</li>
+<li><strong>http4k-connect-cognito</strong> - We now generate action code using Kapt, as per the other clients.</li>
 <li><strong>http4k-connect-cognito-fake</strong> - Fixes to login page.</li>
 </ul>
 <h3 id="v32620">v3.26.2.0<a class="headerlink" href="#v32620" title="Permanent link">&para;</a></h3>
@@ -1570,7 +1571,7 @@ are supported. </li>
 <h3 id="v3400">v3.4.0.0<a class="headerlink" href="#v3400" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http4k-connect-amazon-</strong>* - Region is now not reliant on default AWS format. This helps with on-prem installations with non-standard region format.</li>
-<li><strong>http4k-connect-google-analytics</strong> - [Breaking] Moved Tracking ID out of pageView and into adapter as is global.</li>
+<li><strong>http4k-connect-google-analytics</strong> - [Breaking] Moved Tracking ID out of pageView and into client as is global.</li>
 </ul>
 <h3 id="v3330">v3.3.3.0<a class="headerlink" href="#v3330" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1626,7 +1627,7 @@ are supported. </li>
 </ul>
 <h3 id="v3000">v3.0.0.0<a class="headerlink" href="#v3000" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-</strong>* : Major repackage of all model classes. Model package has been normalised to <code>org.http4k.connect.amazon.&lt;system&gt;.model</code>. All non-top level message objects have been moved from the <code>org.http4k.connect.amazon.&lt;system&gt;.action</code> package into <code>org.http4k.connect.amazon.&lt;system&gt;.model</code>. This is probably very annoying, and apologies in advance - hence the major version uptick. We are not proud of ourselves, but it needed to be done for our future plans... Also imports of generated adapter methods may need to be altered as some of them were in teh wrong place.</li>
+<li><strong>http4k-connect-</strong>* : Major repackage of all model classes. Model package has been normalised to <code>org.http4k.connect.amazon.&lt;system&gt;.model</code>. All non-top level message objects have been moved from the <code>org.http4k.connect.amazon.&lt;system&gt;.action</code> package into <code>org.http4k.connect.amazon.&lt;system&gt;.model</code>. This is probably very annoying, and apologies in advance - hence the major version uptick. We are not proud of ourselves, but it needed to be done for our future plans... Also imports of generated client methods may need to be altered as some of them were in teh wrong place.</li>
 </ul>
 <h3 id="v22300">v2.23.0.0<a class="headerlink" href="#v22300" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1694,7 +1695,7 @@ are supported. </li>
 </ul>
 <h3 id="v21540">v2.15.4.0<a class="headerlink" href="#v21540" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-github</strong> : Add infra for main GitHub adapter. No custom actions implemented yet.</li>
+<li><strong>http4k-connect-github</strong> : Add infra for main GitHub client. No custom actions implemented yet.</li>
 </ul>
 <h3 id="v21530">v2.15.3.0<a class="headerlink" href="#v21530" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1714,7 +1715,7 @@ are supported. </li>
 </ul>
 <h3 id="v21500">v2.15.0.0<a class="headerlink" href="#v21500" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-google-analytics</strong> : [Break] Harmonised interface with other adapters. TrackingId now moved 
+<li><strong>http4k-connect-google-analytics</strong> : [Break] Harmonised interface with other clients. TrackingId now moved 
 to individual requests</li>
 </ul>
 <h3 id="v21420">v2.14.2.0<a class="headerlink" href="#v21420" title="Permanent link">&para;</a></h3>
@@ -1728,11 +1729,11 @@ to individual requests</li>
 </ul>
 <h3 id="v21400">v2.14.0.0<a class="headerlink" href="#v21400" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-</strong>* : [Breaking] Changed Result type on Action to be generic to support other programming models. This will only affect users who are implementing their own adapters. To fix, change: </li>
+<li><strong>http4k-connect-</strong>* : [Breaking] Changed Result type on Action to be generic to support other programming models. This will only affect users who are implementing their own clients. To fix, change: </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">MyAdapter</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nc">MyClient</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span>
 <span class="c1">// to </span>
-<span class="kd">interface</span><span class="w"> </span><span class="nc">MyAdapter</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;&gt;</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nc">MyClient</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">RemoteFailure</span><span class="o">&gt;&gt;</span>
 </code></pre></div>
 
 <h3 id="v21301">v2.13.0.1<a class="headerlink" href="#v21301" title="Permanent link">&para;</a></h3>

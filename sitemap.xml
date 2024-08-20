@@ -21,7 +21,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/guide/concepts/api-adapters/</loc>
+         <loc>https://connect.http4k.org/guide/concepts/api-clients/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -31,12 +31,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/guide/howto/implement-your-own-adapters/</loc>
+         <loc>https://connect.http4k.org/guide/howto/implement-your-own-clients/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://connect.http4k.org/guide/howto/pimp-your-adapters-with-ksp/</loc>
+         <loc>https://connect.http4k.org/guide/howto/pimp-your-clients-with-ksp/</loc>
          <lastmod>2024-08-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

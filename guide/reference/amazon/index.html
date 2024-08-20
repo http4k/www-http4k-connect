@@ -15,17 +15,17 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-<meta itemprop="name" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta itemprop="name" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
 <meta property="og:image" content="https://connect.http4k.org/img/logo-intro.png">
-<meta name="twitter:title" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="twitter:title" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 <meta property="twitter:image" content="https://connect.http4k.org/img/logo-intro.png">
 
 
 
-<meta name="description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
-<meta property="og:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
-<meta name="twitter:description" content="http4k Connect is a lightweight API adapter toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta name="description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
+<meta property="og:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends" />
+<meta name="twitter:description" content="http4k Connect is a lightweight API client toolkit which includes libraries for connecting to popular third-party cloud services and AI backends">
 
 
 
@@ -168,8 +168,8 @@
             
     
         <a class="dropdown-item "
-           href="../../concepts/api-adapters/"
-           title="API Adapters">API Adapters</a>
+           href="../../concepts/api-clients/"
+           title="API Clients">API Clients</a>
     
 
             
@@ -204,8 +204,8 @@
             
     
         <a class="dropdown-item "
-           href="../../howto/implement-your-own-adapters/"
-           title="Implement your own adapters">Implement your own adapters</a>
+           href="../../howto/implement-your-own-clients/"
+           title="Implement your own API clients">Implement your own API clients</a>
     
 
             
@@ -213,8 +213,8 @@
             
     
         <a class="dropdown-item "
-           href="../../howto/pimp-your-adapters-with-ksp/"
-           title="Pimp your adapters with KSP!">Pimp your adapters with KSP!</a>
+           href="../../howto/pimp-your-clients-with-ksp/"
+           title="Pimp your API clients with KSP!">Pimp your API clients with KSP!</a>
     
 
             
@@ -705,7 +705,7 @@
 <li>AWS_SECRET_ACCESS_KEY</li>
 <li>AWS_SESSION_TOKEN</li>
 </ul>
-<p>This auth method uses the STS <code>AssumeRole</code> action to retrieve the rotating credentials from STS using auth from the environmental variables. This requires overriding the credentials provider used when constructing the adapter:</p>
+<p>This auth method uses the STS <code>AssumeRole</code> action to retrieve the rotating credentials from STS using auth from the environmental variables. This requires overriding the credentials provider used when constructing the client:</p>
 <div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">sqs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SQS</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">credentialsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CredentialsProvider</span><span class="p">.</span><span class="na">STS</span><span class="p">())</span>
 </code></pre></div>
 
@@ -714,7 +714,7 @@
 <li>AWS_ROLE_ARN</li>
 <li>AWS_WEB_IDENTITY_TOKEN_FILE</li>
 </ul>
-<p>This auth method uses the STS <code>AssumeRoleWithWebIdentity</code> action to retrieve the rotating credentials from STS using the Web Identity JWT from the file path contained in the env variable. This requires overriding the credentials provider used when constructing the adapter:</p>
+<p>This auth method uses the STS <code>AssumeRoleWithWebIdentity</code> action to retrieve the rotating credentials from STS using the Web Identity JWT from the file path contained in the env variable. This requires overriding the credentials provider used when constructing the client:</p>
 <div class="codehilite"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">sqs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SQS</span><span class="p">.</span><span class="na">Http</span><span class="p">(</span><span class="n">credentialsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CredentialsProvider</span><span class="p">.</span><span class="na">STSWebIdentity</span><span class="p">())</span>
 </code></pre></div>
                     
