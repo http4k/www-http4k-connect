@@ -252,6 +252,15 @@
             
     
         <a class="dropdown-item "
+           href="../guide/reference/ai/azure/"
+           title="Azure AI Inference">Azure AI Inference</a>
+    
+
+            
+            
+            
+    
+        <a class="dropdown-item "
            href="../guide/reference/ai/langchain/"
            title="LangChain">LangChain</a>
     
@@ -688,7 +697,8 @@
 changes with their rationale when appropriate. Given version <code>A.B.C.D</code>, breaking changes are to be expected in version number increments where changes in the <code>A</code> or <code>B</code> sections:</p>
 <h3 id="v52110">v5.21.1.0<a class="headerlink" href="#v52110" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>http4k-connect-</strong>* - [support] Moved common types to the core module (Timestamp etc)</li>
+<li><strong>http4k-connect-</strong>* - [Deprecations] Moved some shared types to the core module.</li>
+<li><strong>http4k-connect-ai-</strong>* - [Breaking] Shared types have been moved to ai-core. Role.user -&gt; Role.Companion.User</li>
 </ul>
 <h3 id="v52100">v5.21.0.0<a class="headerlink" href="#v52100" title="Permanent link">&para;</a></h3>
 <ul>

@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://connect.http4k.org/guide/reference/ai/azure/</loc>
+         <lastmod>2024-08-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://connect.http4k.org/guide/reference/ai/langchain/</loc>
          <lastmod>2024-08-22</lastmod>
          <changefreq>daily</changefreq>
