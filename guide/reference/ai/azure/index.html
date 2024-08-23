@@ -704,14 +704,15 @@
 <p>The http4k-connect AzureAI integration provides:</p>
 <ul>
 <li>AzureAI API Client</li>
-<li>Compatibility with GitHub Models for testing, so you can use a GitHubToken instead of a deployed Azure model</li>
+<li>Compatibility with GitHub Models for testing, so you can use a GitHubToken instead of a deployed Azure model. Note that some endpoints are not available in GitHubModels APIs.</li>
 <li>FakeAzureAI server which can be used as testing harness for the API Client </li>
 </ul>
 <h2 id="azureai_api_connector">AzureAI API connector<a class="headerlink" href="#azureai_api_connector" title="Permanent link">&para;</a></h2>
 <p>The AzureAI connector provides the following Actions:</p>
 <ul>
 <li>GetInfo</li>
-<li>ChatCompletion</li>
+<li>ChatCompletions</li>
+<li>Completions</li>
 <li>CreateEmbeddings</li>
 </ul>
 <p>New actions can be created easily using the same transport.</p>
@@ -739,7 +740,8 @@ this is perfect for deploying to a Serverless function.</p>
 environments without using up valuable request tokens!</p>
 <ul>
 <li>GetInfo</li>
-<li>ChatCompletion</li>
+<li>ChatCompletions</li>
+<li>Completions</li>
 <li>CreateEmbeddings</li>
 </ul>
 <h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
